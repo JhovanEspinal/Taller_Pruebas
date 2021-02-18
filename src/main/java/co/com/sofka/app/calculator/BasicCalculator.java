@@ -22,13 +22,17 @@ public class BasicCalculator {
     }
 
     public Long div(Long number1, Long number2) {
-        logger.info( "dividing {} + {}", number1, number2 );
-        return number1 / number2;
+        logger.info("division {} / {}", number1, number2);
+
+        try {
+            return number1 / number2;
+        } catch (ArithmeticException e) {
+            logger.info("No se puede divir por 0");
+            return 0l;
+        }
+
+
     }
-
-
-
-
 
 
 }
